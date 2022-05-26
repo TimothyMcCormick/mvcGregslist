@@ -16,7 +16,7 @@
 
 <body>
   <header>
-    <nav class="navbar navbar-dark navbar-expand bg-dark text-light no-select d-flex justify-content-between">
+    <nav class="navbar navbar-dark navbar-expand bg-dark text-light no-select d-flex justify-content-around">
       <a class="navbar-brand ms-3" href="#">
         <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt=""
           loading="lazy">
@@ -24,7 +24,7 @@
       </a>
       <b onclick="app.carsController.viewCars()">Cars</b>
       <b onclick="app.housesController.viewHouses()">Houses</b>
-      <b>Jobs</b>
+      <b onclick="app.jobsController.viewJobs()">Jobs</b>
     </nav>
   </header>
   <main>
@@ -42,9 +42,13 @@
         <!-- Car end -->
       </div>
       <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#form-modal">
-        Create
-      </button>
+      <div class="col-12 d-flex justify-content-around ">
+
+        <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#form-modal">
+          Add Listing
+        </button>
+        
+      </div>
 
       <!-- Modal -->
       <div class="modal fade" id="form-modal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"

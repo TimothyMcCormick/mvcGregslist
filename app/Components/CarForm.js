@@ -2,7 +2,8 @@ export function getCarForm(){
   return `
   
   <form class="mb-3 col-12 bg-white p-3 mt-4" onsubmit="app.carsController.createCar()">
-              <h3> List a Car </h3>
+              <h3> Create Listing </h3>
+  
                 <div class="row">
                   <div class="col-3 mb-2">
                     <label for="" class="form-label">Make</label>

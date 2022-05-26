@@ -12,6 +12,7 @@ function _drawCars(){
   document.getElementById('listings').innerHTML = template
 }
 
+
 export class CarsController{
   constructor(){
     console.log('cars controller loaded', ProxyState.cars);
