@@ -4,14 +4,14 @@ import { generateId } from "../Utils/generateId.js"
 export class Car{
   constructor(carData){
     // NOTE need id to have something unique on each car
-    this.id = generateId()
+    this.id = carData.id || generateId()
     this.make = carData.make
     this.model = carData.model
-    this.description = carData.description
-    this.price = carData.price
-    this.year = carData.year
-    this.color = carData.color
     this.imgUrl = carData.imgUrl
+    this.year = carData.year
+    this.price = carData.price
+    this.description = carData.description
+    this.color = carData.color
   }
 
 
@@ -25,6 +25,7 @@ export class Car{
       <p>${this.description}</p>
       <input class="w-100" type="color" value="${this.color}">
       <button class="btn btn-danger" onclick="app.carsController.deleteCar('${this.id}')"><i class="mdi mdi-delete"></i></button>
+      <button class="btn btn-warning" onclick="app.carsController.openEditForm('${this.id}')"><i class="mdi mdi-pencil"></i></button>
     </div>
   </div>
     `

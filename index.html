@@ -16,18 +16,30 @@
 
 <body>
   <header>
-    <nav class="navbar navbar-dark navbar-expand bg-dark text-light no-select d-flex justify-content-around">
+    <nav class="navbar navbar-dark navbar-expand bg-dark text-light no-select d-flex justify-content-between pe-5">
       <a class="navbar-brand ms-3" href="#">
         <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt=""
           loading="lazy">
         <span class="ms-2">gregslist</span>
       </a>
-      <b onclick="app.carsController.viewCars()">Cars</b>
-      <b onclick="app.housesController.viewHouses()">Houses</b>
-      <b onclick="app.jobsController.viewJobs()">Jobs</b>
+      <b class="selectable p-3" onclick="app.carsController.viewCars()">Cars</b>
+      <b class="selectable p-3" onclick="app.housesController.viewHouses()">Houses</b>
+      <b class="selectable p-3" onclick="app.jobsController.viewJobs()">Jobs</b>
     </nav>
   </header>
   <main>
+    <!-- Button trigger modal -->
+    <div class="col-12 d-flex justify-content-around m-2">
+      <button type="button" class="btn btn-primary btn-lg" onclick="app.carsController.openCreateForm()">
+        List Car
+      </button>
+      <button type="button" class="btn btn-primary btn-lg" onclick="app.housesController.openCreateForm()">
+        List House
+      </button>
+      <button type="button" class="btn btn-primary btn-lg" onclick="app.jobsController.openCreateForm()">
+        List Job
+      </button>
+    </div>
     <div class="container-fluid">
       <div id="listings" class="row">
         <!-- Car -->
@@ -41,15 +53,7 @@
         </div> -->
         <!-- Car end -->
       </div>
-      <!-- Button trigger modal -->
-      <div class="col-12 d-flex justify-content-around ">
-
-        <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#form-modal">
-          Add Listing
-        </button>
-        
-      </div>
-
+      
       <!-- Modal -->
       <div class="modal fade" id="form-modal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
         aria-hidden="true">
@@ -58,7 +62,7 @@
             <div class="modal-header">
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body" id="form-body">
+            <div class="modal-body justify-content-between" id="form-body">
               <!-- form part -->
               <!-- NOTE car from moved to components get car from -->
               <!-- form part -->
@@ -77,6 +81,8 @@
     </div>
   </footer>
 
+  <!-- NOTE NEED THIS AXIOS LINE TO USE AXIOS IN THE SERVICE! -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.23.0/axios.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
     crossorigin="anonymous"></script>
